@@ -1,3 +1,5 @@
+google.com, pub-4927671218423061, DIRECT, f08c47fec0942fa0
+
 applovin.com, 6621ed6f956f9d333c480e02b0d784b8, DIRECT
 adyoulike.com, 2d578cf695c89ec2ba707280319d2020, RESELLER
 bidease.com, bidease_seller_26, RESELLER
@@ -201,5 +203,3 @@ ushareit.com, lcb555b3bc8667a09a, RESELLER
 videoheroes.tv, 212428, RESELLER, 064bc410192443d8
 voisetech.com, 1066, RESELLER
 zmaticoo.com, 5135195, RESELLER
-
-google.com, pub-4927671218423061, DIRECT, f08c47fec0942fa0
