@@ -48,11 +48,11 @@
             <section id="summary">
                 <h2><span class="num">02</span>Summary</h2>
                 <ul>
-            <li>We do not ask for or collect your name, email address, phone number, contacts, photos, or location.</li>
-            <li>We do not have user accounts.</li>
-            <li>Overlays, input mapping, and screen-related features work locally. We do not record or upload your screen or what you type.</li>
-            <li>We use Google services for subscriptions, analytics, crash reports, and notifications, and ad networks to show ads to free users.</li>
-            <li>We do not sell your personal data.</li>
+            <li>We do not ask for your name, email address, phone number, contacts, photos, or precise location, and the App has no user accounts.</li>
+            <li>The App and the services it uses collect identifiers (your User ID, advertising ID, and app instance ID), approximate location derived from your IP address, app activity, and diagnostics.</li>
+            <li>Some of this data is shared with advertising partners to show and measure ads. See <a href="#data-safety">Google Play Data safety categories</a>.</li>
+            <li>Your app library, the launcher, and the App's personalization features work on your device.</li>
+            <li>We do not sell your personal data for money. Some laws treat sharing data with ad partners as a "sale" or "sharing"; you can opt out as described in <a href="#consent">section 7</a>.</li>
         </ul>
             </section>
             <section id="collect">
@@ -68,9 +68,9 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Device identifier derived from the device's DRM system (Widevine), stored only as a hashed value and shown as your User ID. We do not use Android ID or other hardware serial numbers, and this identifier is never linked to your advertising ID</td>
-                    <td>Look up premium, promotional, or lifetime access granted to your device</td>
-                    <td>FRB Project; the lookup file is hosted on GitHub</td>
+                    <td>User ID: a device identifier derived from the device's DRM system (Widevine), stored only as a hashed value. We do not use Android ID or other hardware serial numbers</td>
+                    <td>Look up premium, promotional, or lifetime access granted to your device; link crash reports to the same installation</td>
+                    <td>FRB Project; Google Firebase Crashlytics</td>
                 </tr>
                 <tr>
                     <td>Subscription status and purchase token</td>
@@ -78,9 +78,9 @@
                     <td>Google Play Billing</td>
                 </tr>
                 <tr>
-                    <td>Advertising ID, IP address, device and ad interaction data</td>
-                    <td>Show ads, measure ad performance, prevent ad fraud</td>
-                    <td>AppLovin, Google AdMob, and their partners</td>
+                    <td>Advertising ID, IP address and the approximate location derived from it, device information, ad interactions, and diagnostics</td>
+                    <td>Show ads, measure ad performance, prevent ad fraud, and, where you consent, personalise ads</td>
+                    <td>AppLovin, Google AdMob, and their advertising and mediation partners</td>
                 </tr>
                 <tr>
                     <td>App usage events, ad revenue events, app instance ID, device model, OS version, country</td>
@@ -98,7 +98,7 @@
                     <td>Google Firebase Cloud Messaging</td>
                 </tr>
                 <tr>
-                    <td>Network requests to GitHub (IP address, app version)</td>
+                    <td>Update and configuration requests</td>
                     <td>Check for app updates and download configuration</td>
                     <td>GitHub</td>
                 </tr>
@@ -106,15 +106,56 @@
             </table>
         </div>
         <p>We never receive your payment card or billing details. Payments are handled entirely by Google Play.</p>
+
+        <h3 id="data-safety">Google Play Data safety categories</h3>
+        <p>The same data, grouped the way it appears in the Data safety section of our Google Play listing. All of it is encrypted in transit.</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Collected</th>
+                    <th>Shared with third parties</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><b>Location</b> (approximate, from IP address)</td>
+                    <td>Yes, by ad SDKs</td>
+                    <td>Yes: advertising partners, for advertising, analytics, and fraud prevention</td>
+                </tr>
+                <tr>
+                    <td><b>Personal info</b> (User IDs: your hashed User ID)</td>
+                    <td>Yes</td>
+                    <td>Yes: Google Firebase, for crash reporting and app functionality</td>
+                </tr>
+                <tr>
+                    <td><b>Device or other IDs</b> (advertising ID, app instance ID, messaging token)</td>
+                    <td>Yes</td>
+                    <td>Yes: advertising partners and Google Firebase, for advertising, analytics, and notifications</td>
+                </tr>
+                <tr>
+                    <td><b>App activity</b> (app interactions, ad interactions)</td>
+                    <td>Yes</td>
+                    <td>Yes: advertising partners and Google Firebase Analytics, for advertising and analytics</td>
+                </tr>
+                <tr>
+                    <td><b>App info and performance</b> (crash logs, diagnostics)</td>
+                    <td>Yes</td>
+                    <td>Yes: Google Firebase Crashlytics and advertising partners, for stability and fraud prevention</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
             </section>
             <section id="local">
                 <h2><span class="num">04</span>Data that stays on your device</h2>
                 <ul>
-            <li><b>Usage Access:</b> used only to detect when a game you selected is opened, so the App can start the features you chose. App usage history is not stored or sent anywhere.</li>
-            <li><b>Input from touchscreen, mouse, and keyboard:</b> processed in real time on the device for input mapping. Keystrokes and touches are not logged or transmitted.</li>
-            <li><b>Overlays and screen features:</b> drawn and processed locally. Screen content is not recorded or uploaded.</li>
-            <li><b>Shizuku, ADB, and root access:</b> used only to run the device actions you start, such as input injection and system tuning. These actions are user-initiated and visible through a foreground service notification.</li>
-            <li><b>Settings and mapping profiles:</b> stored in the App's private storage and deleted when you clear the App's data or uninstall it.</li>
+            <li><b>App library:</b> the list of installed apps you add to the App is read from your device and stored only in the App's private storage.</li>
+            <li><b>Usage Access:</b> used only to detect when an app in your library is opened, so the App can apply the personalization you chose. App usage history is not stored or sent anywhere.</li>
+            <li><b>Content displayed over other apps:</b> displayed and processed on the device. The App does not modify other apps or access their data.</li>
+            <li><b>Elevated access:</b> system-level permissions you grant yourself, for example through wireless debugging. They are used only to run the device actions you start, and those actions are visible through a foreground service notification.</li>
+            <li><b>Settings, profiles, and your acceptance of the Terms:</b> stored in the App's private storage and deleted when you clear the App's data or uninstall it.</li>
         </ul>
             </section>
             <section id="third-party">
@@ -154,9 +195,10 @@
                 <h2><span class="num">09</span>Your rights and deletion</h2>
                 <p>Depending on where you live, you may have the right to access, correct, delete, or restrict the processing of your data, to object to processing, to data portability, and to withdraw consent. You may also lodge a complaint with your local data protection authority.</p>
         <div class="callout">
-            <p><b>How to request deletion:</b> email <a href="mailto:fahrezone.dev@gmail.com?subject=Red%20Corner%20data%20deletion%20request">fahrezone.dev@gmail.com</a> with the subject "Data deletion request" and include the User ID shown on the Profile page of the App. We will delete premium access records linked to that ID and request deletion of the related analytics and crash data from Firebase. We aim to respond within 30 days.</p>
+            <p><b>How to make a request:</b> email <a href="mailto:fahrezone.dev@gmail.com?subject=Red%20Corner%20privacy%20request">fahrezone.dev@gmail.com</a> and include the User ID shown on the Profile page of the App. For data we control, such as premium access records linked to that ID, we will act on your request and aim to respond within 30 days.</p>
         </div>
-        <p>Because the App has no accounts, uninstalling it removes all data stored on your device. Deleting data linked to your User ID does not cancel an active Google Play subscription; cancel it in Google Play first.</p>
+        <p><b>Data held by third parties:</b> data collected by advertising partners and Google Firebase is held under their own policies and is not linked to an account with us, so we cannot delete it on your behalf. You can limit it by resetting or deleting your advertising ID, declining personalised ads, or using the controls offered by those providers in <a href="#third-party">section 5</a>.</p>
+        <p>Because the App has no accounts, uninstalling it removes all data stored on your device. Requests about your User ID do not cancel an active Google Play subscription; cancel it in Google Play first.</p>
             </section>
             <section id="transfers">
                 <h2><span class="num">10</span>International transfers</h2>
@@ -168,7 +210,7 @@
             </section>
             <section id="children">
                 <h2><span class="num">12</span>Children</h2>
-                <p>The App is not directed at children under 13, and we do not knowingly collect personal data from them. If you believe a child has provided personal data, contact us and we will delete it.</p>
+                <p>The App is not directed at children under 13, and we do not knowingly collect personal data from them. If you believe a child under 13 is using the App, contact us with the User ID shown on the Profile page, and we will remove the premium access records linked to it. Data held by advertising partners and Google Firebase is handled as described in <a href="#rights">section 9</a>.</p>
             </section>
             <section id="changes">
                 <h2><span class="num">13</span>Changes</h2>
